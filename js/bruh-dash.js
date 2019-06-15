@@ -10,47 +10,87 @@ var global = window || GLOBAL;
 global.bruhdash = {
 
   // returns the first element of an array
-  first: function () {
-      
+  first: function (arr1) {
+    return arr1[0];
   },
 
   // returns the last element of an array
-  last: function () {
-
+  last: function (arr2) {
+    return arr2[arr2.length-1];
   },
 
   // returns the index of the first matching element from left to right
-  indexOf: function () {
-
+  indexOf: function (arr3, match) {
+    for (let i=0; i<arr3.length; i++){
+      if (arr3[i]===match){
+        return i;
+      }
+    }
+      return -1
   },
-
   // returns the index of the first matching element from right to left
-  lastIndexOf: function () {
-
+  
+  lastIndexOf: function (arr4, match2) {
+    for (let i=arr4.length-1; i>=0; i--){
+      if (arr4[i]===match2){
+        return i;
+      }
+    }
+    return -1
   },
 
   // returns an array with all elements except for the last element
-  initial: function () {
-
+  initial: function (arr5) {
+    let arr6 = []
+    for (let i=0; i<arr5.length-1; i++){
+      arr6.push(arr5[i]);
+    }
+    return arr6
   },
   
   // returns an array with all falsey values removed
-  compact: function() {
-
+  compact: function(arr7) {
+    let arr8 = []
+    for (let i=0; i<arr7.length; i++){
+      if (arr7[i] !== false && arr7[i] !== 0 && arr7[i] !== '' && arr7[i] !== null && arr7[i] !== undefined && arr7[i] === arr7[i]){
+        arr8.push(arr7[i]);
+      }
+    }
+    return arr8
   },
 
   // creates a slice of an array from the start index up to but not including the end index
-  slice: function () {
-
+  slice: function (arr9, startArr9, endArr9) {
+    let arr10 = [];
+    for (let i=0; i<arr9.length; i++){
+      if (i >= startArr9 && i < endArr9){
+        arr10.push(arr9[i]);
+      }
+    }
+    return arr10;
   },
 
   // returns a slice of array with n elements dropped from the beignning
-  drop: function(){
-
+  drop: function(arr11, startArr11){
+    let arr12 = []
+    for (let i=0; i<arr11.length; i++){
+      if (startArr11 === 0 || startArr11 === ''){
+        console.log(arr12.push(arr11[i]));
+      }
+      if (arr11[i] > startArr11 && arr11[i] !== startArr11){
+        arr12.push(arr11[i]);
+      }
+    }
+    console.log(arr12)
   },
 
   // returns a slice of array with n elements dropped from the end
-  dropRight: function() {
+  dropRight: function(arr13, n) {
+    for (let i=0; i<arr13.length; i++){
+      if (arr13){
+        
+      }
+    }
 
   },
 
