@@ -72,31 +72,54 @@ global.bruhdash = {
 
   // returns a slice of array with n elements dropped from the beignning
   drop: function(arr11, startArr11){
-    let arr12 = []
-    for (let i=0; i<arr11.length; i++){
-      if (startArr11 === 0 || startArr11 === ''){
-        console.log(arr12.push(arr11[i]));
+    let arr12 = [];
+      if (startArr11 === 0){
+        return arr11;
       }
-      if (arr11[i] > startArr11 && arr11[i] !== startArr11){
-        arr12.push(arr11[i]);
+      else if (!startArr11){
+        for (let i=1; i<arr11.length; i++){
+          arr12.push(arr11[i]);
+        }
+      }else if (arr11){
+        for (let i=startArr11; i<arr11.length; i++){
+          arr12.push(arr11[i]);
+        }
       }
-    }
-    console.log(arr12)
+    return arr12;
   },
 
   // returns a slice of array with n elements dropped from the end
-  dropRight: function(arr13, n) {
-    for (let i=0; i<arr13.length; i++){
-      if (arr13){
-        
-      }
-    }
-
+  dropRight: function(arr13, startArr13) {
+      let arr14 = [];
+        if (startArr13 === 0){
+          return arr13;
+        }else if (!startArr13){
+          for (let i=0; i<arr13.length - 1; i++){
+            arr14.push(arr13[i]);
+          }
+        }else if (arr13){
+          for (let i=0; i<arr13.length - startArr13; i++){
+            arr14.push(arr13[i]);
+          }
+        }
+    return arr14;
   },
 
   // creates a slice of an array with n elements taken from the beginning
-  take: function () {
-
+  take: function (arr15, startArr15) {
+    let arr16 = [];
+      if (startArr15 === 0){
+        return [];
+      }else if (!startArr15){
+        console.log(arr15[0]);
+      }else if (startArr15 > arr15.length){
+        return arr15;
+      }else if (arr15){
+        for (let i=0; i<startArr15; i++){
+          arr16.push(arr15[i]);
+        }
+      }
+      return arr16;
   },
 
   // creates a slice of an array with n elements taken from the end
