@@ -147,18 +147,41 @@ global.bruhdash = {
 
   // fills elements of array with specified value from the start index
   // up to but not including the end index
-  fill: function() {
-
+  fill: function(arr19, arrFill, startArr19, endArr19) {
+      if (!startArr19 && !endArr19){
+        for (let i=0; i<arr19.length; i++){
+            arr19.splice(i, 1, arrFill);
+        }
+        return arr19;
+      }else{
+        for (let i=startArr19; i<endArr19; i++){
+            arr19.splice(i, 1, arrFill)
+        }
+        return arr19;
+      }
   },
 
   // removes all given values from an array
-  pull: function () {
-
+  pull: function (arr20, pull1, pull2) {
+    for (let i=0; i<arr20.length; i++){
+      if (arr20[i] === pull1){
+        arr20.splice(i,1);
+      }
+    }
+    for (let i=0; i<arr20.length; i++){
+      if (arr20[i] === pull2){
+        arr20.splice(i,1);
+      }
+    }
+    return arr20;
   },
 
   // removes elements of an array corresponding to the given indices
-  pullAt: function () {
-
+  pullAt: function (arr21, pullArr) {
+    let arr22 = [];
+    arr22.push(arr21[pullArr[0]]);
+    arr22.push(arr21[pullArr[1]]);
+    return arr22;
   },
 
   // creates an array excluding all the specified values
