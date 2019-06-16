@@ -111,7 +111,10 @@ global.bruhdash = {
       if (startArr15 === 0){
         return [];
       }else if (!startArr15){
-        console.log(arr15[0]);
+        for (let i=0; i<1; i++){
+          arr16.push(arr15[i]);
+          return arr16;
+        }
       }else if (startArr15 > arr15.length){
         return arr15;
       }else if (arr15){
@@ -123,8 +126,23 @@ global.bruhdash = {
   },
 
   // creates a slice of an array with n elements taken from the end
-  takeRight: function () {
-
+  takeRight: function (arr17, startArr17) {
+    let arr18 = [];
+      if (startArr17 === 0){
+        return [];
+      }else if (startArr17 > arr17.length){
+        arr18.push(arr17);
+        return arr18;
+      }else if (!startArr17){
+        for (let i=arr17.length-1; i<arr17.length; i++)
+          arr18.push(arr17[i]);
+          return arr18;
+      }else if (arr18){
+        for (let i=arr17.length - startArr17; i<arr17.length; i++){
+          arr18.push(arr17[i]);
+        }
+      }
+      return arr18;
   },
 
   // fills elements of array with specified value from the start index
