@@ -185,13 +185,29 @@ global.bruhdash = {
   },
 
   // creates an array excluding all the specified values
-  without: function() {
-
+  without: function(arr22, exclude1, exclude2) {
+    for (let i=0; i<arr22.length; i++){
+      if (arr22[i] === exclude1){
+        arr22.splice(i,1);
+      }
+    }
+    for (let i=0; i<arr22.length; i++){
+      if (arr22[i] === exclude2){
+        arr22.splice(i, 1)
+      }
+    }
+    return arr22;
   },
 
   // returns an array with specified values excluded
-  difference: function() {
-
+  difference: function(arr23, arr24) {
+    let arr25 = [];
+    for (let i=0; i<arr23.length; i++){
+      if (!arr24.includes(arr23[i])){
+        arr25.push(arr23[i]);
+      }
+    }
+    return arr25;
   },
 
   /*******************
@@ -199,8 +215,18 @@ global.bruhdash = {
    *******************/ 
 
   // creates an array of grouped elements
-  zip: function () {
-
+  zip: function (arr26, arr27) {
+    let arr28 = []
+    for (let i=0; i<arr26.length; i++){
+      console.log(arr28.push(arr26[i]))
+      // for (let j=0; i<arr27.length; j++){
+      //   arr28.push(arr26[i]);
+      //   arr28.push(arr27[i])
+      //   console.log(arr28)
+      // }
+    }
+    console.log(arr28)
+    //console.log(arr27)
   },
 
   // creates an array of grouped elements in their pre-zip configuration
@@ -209,8 +235,21 @@ global.bruhdash = {
   },
 
   // creates an array of elements into groups of length of specified size
-  chunk: function(){
+  chunk: function(arrChunk, chunkNum){
+    let arrChunkNew = [];
+    if (arrChunk.length === 0){
+      return [];
+    }else if (chunkNum === 0){
+      return [];
+    }else if (arrChunk.length === chunkNum){
+      arrChunkNew.push(arrChunk)
+      return arrChunkNew;
+    }else if (arrChunk.length < chunkNum){
+      arrChunkNew.push(arrChunk)
+      return arrChunkNew;
+    }else if (arrChunk.length !== chunkNum){
 
+    }
   },
 
   // iterates over elements of a collection and invokes iteratee for each element
